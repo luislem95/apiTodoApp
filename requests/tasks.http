@@ -1,0 +1,48 @@
+@api = http://localhost:3000/tasks
+
+
+GET {{ api}}
+
+###
+GET {{ api }}/1
+
+###
+GET {{ api }}/count
+###
+
+###
+POST {{ api }}
+Content-Type: application/json
+
+{
+  "nombre": "Tarea de prueba",
+  "descripcion": "Esta es una tarea de prueba",
+  "fechaEnd": "2024-12-31",
+  "idUser": 3,
+  "idAssigned": 1
+}
+###
+
+PUT {{ api }}/1
+Content-Type: application/json
+
+{
+    "title": "Ir a cenar con mi amorcito",
+    "description": "EL dia de las madres "
+}
+###
+
+DELETE {{ api }}/3
+###
+
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "prueba1@gmail.com",
+    "password": "123456"
+}
+
+### Intento de inicio de sesión con credenciales correctas (simulación de inicio de sesión exitoso)
+GET http://localhost:3000/user
